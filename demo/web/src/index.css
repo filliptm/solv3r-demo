@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Chart and viewer roles (the dark column of the dataviz reference palette). UI chrome uses Tailwind's stone scale. */
+@theme {
+  --color-viz-surface: #1a1a19;
+  --color-viz-plane: #0d0d0d;
+  --color-viz-ink: #f0efec;
+  --color-viz-ink-2: #c3c2b7;
+  --color-viz-muted: #898781;
+  --color-viz-grid: #2c2c2a;
+  --color-viz-axis: #383835;
+  --color-viz-series: #3987e5;
+  --color-viz-critical: #d03b3b;
+  --color-viz-warning: #fab219;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--color-stone-950);
+  color: var(--color-stone-100);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Native number inputs: hide the spinners (NumberField draws its own buttons). */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Thin dark scrollbars in panels. */
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-stone-700) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0ms !important;
+  }
+}

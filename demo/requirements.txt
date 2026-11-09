@@ -1,0 +1,12 @@
+# Server dependencies of the Solv3R demo (PyTorch and the solv3r package are installed separately, see README.md)
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+imageio-ffmpeg>=0.5
+# Gaussian splats (Splats section): gsplat compiles its CUDA kernels on first use (needs the CUDA toolkit that matches
+# torch, and MSVC on Windows). SHARP itself is installed from its repo without dependencies (see README.md).
+gsplat==1.5.3
+ninja
+timm>=1.0
+plyfile>=1.0
+pillow-heif>=0.18

@@ -1,0 +1,12 @@
+# Cloned and created by demo/setup.ps1
+.venv/
+solv3r/
+ml-sharp/
+
+# Run time and build output
+demo/cache/
+demo/web/node_modules/
+demo/web/dist/
+demo/web/*.tsbuildinfo
+__pycache__/
+*.pyc
